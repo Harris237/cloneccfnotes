@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxurious White Cards & F Notes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            background-color: #000000;
+        }
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+        .animated-text {
+            font-size: 1.5em;
+            margin: 20px 0;
+            height: 40px;
+            overflow: hidden;
+        }
+        .animated-text span {
+            display: inline-block;
+            white-space: nowrap;
+            animation: slide 10s linear infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateY(100%); }
+            10% { transform: translateY(0); }
+            20% { transform: translateY(0); }
+            30% { transform: translateY(-100%); }
+            100% { transform: translateY(-100%); }
+        }
+        .product {
+            margin: 20px 0;
+        }
+        .product h2 {
+            font-size: 2em;
+        }
+        .product p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .product button {
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .product button:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 0.8em;
+        }
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .product-item {
+            background-color: #1c1c1c;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: left;
+        }
+        .product-item h3 {
+            font-size: 1.5em;
+            margin-top: 0.5em;
+        }
+        .checkout-page {
+            display: none;
+            text-align: left;
+            padding: 50px 20px;
+            background-color: #000000;
+            color: white;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .checkout-page h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .checkout-page p {
+            font-size: 1.2em;
+        }
+        .checkout-page .total {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .payment-options button {
+            margin: 10px;
+        }
+        .crypto-payment, .bank-transfer {
+            display: none;
+            margin-top: 20px;
+        }
+        .crypto-payment img, .bank-transfer img {
+            max-width: 200px;
+        }
+        .contact-info {
+            margin-top: 50px;
+            font-size: 1em;
+        }
+        form {
+            margin-top: 20px;
+        }
+        form input, form button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 400px;
+        }
+        form button {
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .paid-button {
+            display: none;
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+        .paid-button:hover {
+            background-color: #ffffff;
+            color: #000000;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="mainPage">
+        <h1>Luxurious Clone CC & F Notes</h1>
+        <div class="animated-text">
+            <span>Get Rich - Stay Motivated - Achieve Success - Live Lavishly - Repeat</span>
+        </div>
+        <div class="product">
+            <h2>Clone CC</h2>
+            <p>Each card can be used at any ATM, is valid for 90 days after the first use, You can only order one product at a time.</p>
+            <div class="product-grid">
+                <div class="product-item">
+                    <h3>Clone CC 1</h3>
+                    <p>Price:  £120</p>
+                    <p>Balance: £700</p>
+                    <p>Valid for: 90 days</p>
+                    <button onclick="addToCart('White Card 1', 120)">Buy Now</button>
+                </div>
+                <div class="product-item">
+                    <h3>Clone CC 2</h3>
+                    <P>Price:  £250</P>
+                    <p>Balance: £1000</p>
+                    <p>Valid for: 90 days</p>
+                    <button onclick="addToCart('White Card 2', 250)">Buy Now</button>
+                </div>
+                <div class="product-item">
+                    <h3>Clone CC 3</h3>
+                    <P>Price: £400</P>
+                    <p>Balance: £2000</p>
+                    <p>Valid for: 90 days</p>
+                    <button onclick="addToCart('White Card 3', 400)">Buy Now</button>
+                </div>
+                <div class="product-item">
+                    <h3>Clone CC 4</h3>
+                    <P>Price:  £700</P>
+                    <p>Balance: £5000</p>
+                    <p>Valid for: 90 days</p>
+                    <button onclick="addToCart('White Card 4', 600)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <h2>F Notes</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <h3>F Notes Pack 1</h3>
+                    <p>Cost: £300</p>
+                    <p>Value: £1000</p>
+                    <button onclick="addToCart('Prop Notes Pack 1', 300)">Buy Now</button>
+                </div>
+                <div class="product-item">
+                    <h3>F Notes Pack 2</h3>
+                    <p>Cost: £500</p>
+                    <p>Value: £2000</p>
+                    <button onclick="addToCart('Prop Notes Pack 2', 500)">Buy Now</button>
+                </div>
+                <div class="product-item">
+                    <h3>F Notes Pack 3</h3>
+                    <p>Cost: £700</p>
+                    <p>Value: £3500</p>
+                    <button onclick="addToCart('Prop Notes Pack 3', 700)">Buy Now</button>
+                </div>
+                <div class="product-item">
+                    <h3>F Notes Pack 4</h3>
+                    <p>Cost: £1000</p>
+                    <p>Value: £6000</p>
+                    <button onclick="addToCart('Prop Notes Pack 4', 1000)">Buy Now</button>
+                </div>
+                <div class="product-item">
+                    <h3>F Notes Pack 5</h3>
+                    <p>Cost: £1500</p>
+                    <p>Value: £7500</p>
+                    <button onclick="addToCart('Prop Notes Pack 5', 1500)">Buy Now</button>
+                </div>
+                <div class="product-item">
+                    <h3>F Notes Pack 6</h3>
+                    <p>Cost: £2000</p>
+                    <p>Value: £10000</p>
+                    <button onclick="addToCart('Prop Notes Pack 6', 2000)">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="contact-info">
+            <p>Contact Us:</p>
+            <p>Email: whitecardsfnotes@gmail.com</p>
+            <p>WhatsApp: +123456789</p>
+            <p>Work with the realest in the game</p>
+        </div>
+        <div class="footer">
+            &copy; 2024 Luxurious White Cards & Prop Notes. All rights reserved.
+        </div>
+    </div>
+
+    <div class="checkout-page" id="checkoutPage">
+        <h2>Checkout</h2>
+        <div id="cartItems"></div>
+        <p>Total items: <span id="totalItems">0</span></p>
+        <p class="total">Total price: £<span id="totalPrice">0</span></p>
+        <form id="deliveryForm">
+            <h3>Delivery Information</h3>
+            <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+            <input type="text" id="address" name="address" placeholder="Address" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+        </form>
+        <div class="payment-options">
+            <button onclick="showPaymentOptions('crypto')">Pay with Crypto</button>
+            <button onclick="showPaymentOptions('bank')">Pay with Bank Transfer</button>
+        </div>
+        <div class="crypto-payment" id="cryptoPayment">
+            <p>Select a cryptocurrency:</p>
+            <button onclick="showCryptoDetails('Bitcoin')">Bitcoin</button>
+            <button onclick="showCryptoDetails('Ethereum')">Ethereum</button>
+            <button onclick="showCryptoDetails('USDT')">USDT</button>
+            <button onclick="showCryptoDetails('USDC')">USDC</button>
+            <div id="cryptoDetails">
+                <!-- Crypto details will be displayed here -->
+            </div>
+        </div>
+        <div class="bank-transfer" id="bankTransfer">
+            <p>Please send the total amount to the following bank details:</p>
+            <p>Account Name: Luxurious White Cards</p>
+            <p>Account Number: 12345678</p>
+            <p>Sort Code: 12-34-56</p>
+            <p>Bank: Luxurious Bank</p>
+            <p>Once the transfer is complete, please push the paid button.</p>
+        </div>
+        <button class="paid-button" id="paidButton" onclick="markAsPaid()">Paid</button>
+    </div>
+
+    <script>
+        let cart = [];
+        let totalItems = 0;
+        let totalPrice = 0;
+
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            totalItems++;
+            totalPrice += price;
+            document.getElementById('totalItems').innerText = totalItems;
+            document.getElementById('totalPrice').innerText = totalPrice;
+            displayCartItems();
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('checkoutPage').style.display = 'block';
+        }
+
+        function displayCartItems() {
+            const cartItemsDiv = document.getElementById('cartItems');
+            cartItemsDiv.innerHTML = '';
+            cart.forEach(item => {
+                cartItemsDiv.innerHTML += `<p>${item.product}: £${item.price}</p>`;
+            });
+        }
+
+        function showPaymentOptions(option) {
+            document.getElementById('cryptoPayment').style.display = 'none';
+            document.getElementById('bankTransfer').style.display = 'none';
+            document.getElementById('paidButton').style.display = 'none';
+            if (option === 'crypto') {
+                document.getElementById('cryptoPayment').style.display = 'block';
+            } else {
+                document.getElementById('bankTransfer').style.display = 'block';
+            }
+            document.getElementById('paidButton').style.display = 'block';
+        }
+
+        function showCryptoDetails(crypto) {
+            const cryptoDetails = {
+                'Bitcoin': {
+                    'address': 'bc1qt7yrz6t22nrshm93uz75gajwu3vwxttq2umvdh',
+                    'qr': 'bitcoin-qr.png'
+                },
+                'Ethereum': {
+                    'address': '0x3c9324694e19D53A35C8Bae978b41CcB2901f435',
+                    'qr': 'ethereum-qr.png'
+                },
+                'USDT': {
+                    'address': 'TBQUNzgRdmLzcxMAkqcxBzWXgGYvREncay',
+                    'qr': 'usdt-qr.png'
+                },
+                'USDC': {
+                    'address': '0x3c9324694e19D53A35C8Bae978b41CcB2901f435',
+                    'qr': 'usdc-qr.png'
+                }
+            };
+            const details = cryptoDetails[crypto];
+            document.getElementById('cryptoDetails').innerHTML = `
+                <p>Send ${totalPrice} GBP worth of ${crypto} to the following address:</p>
+                <p>${details.address}</p>
+                <img src="${details.qr}" alt="${crypto} QR Code">
+            `;
+        }
+
+        function markAsPaid() {
+            const fullName = document.getElementById('fullName').value;
+            const address = document.getElementById('address').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const orderNumber = 'ORD' + Math.floor(Math.random() * 1000000);
+            const orderDetails = cart.map(item => `${item.product}: £${item.price}`).join(', ');
+
+            const emailBody = `
+                Order Number: ${orderNumber}\n
+                Full Name: ${fullName}\n
+                Address: ${address}\n
+                Email: ${email}\n
+                Phone: ${phone}\n
+                Items: ${orderDetails}\n
+                Total Price: £${totalPrice}
+            `;
+
+            const mailtoLink = `mailto:whitecardsfnotes@gmail.com?subject=Order%20Paid&body=${encodeURIComponent(emailBody)}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
+
